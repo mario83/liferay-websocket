@@ -13,20 +13,19 @@ AUI().ready(
 		// Create a simple drawing tool:
 		var tool = new Tool();
 
-		// Define a mousedown and mousedrag handler
 		tool.onMouseDown = function(event) {
 			A.fire('onMouseDown', event.point);
-			A.fire('websocketSend', "onMouseDown",event.point);
+			A.fire('websocketSend', "onMouseDown", event.point);
 		}
 
 		tool.onMouseDrag = function(event) {
 			A.fire('onMouseDrag', event.point);
-			A.fire('websocketSend', "onMouseDrag",event.point);
+			A.fire('websocketSend', "onMouseDrag", event.point);
 		}
 
 		tool.onMouseUp = function(event) {
 			A.fire('onMouseUp', event.point);
-			A.fire('websocketSend', "onMouseUp",event.point);
+			A.fire('websocketSend', "onMouseUp", event.point);
 		}
 
 		function Point(x, y) {

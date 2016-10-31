@@ -41,11 +41,9 @@ public class WebSocketLoggerApplication extends WebSocketApplication{
 		broadcaster.broadcast(members, jsonMessage);
 	}
 
-	// Logged in members
 	private static final Set<WebSocket> members = Collections
 			.newSetFromMap(DataStructures.<WebSocket, Boolean>getConcurrentMap());
 	
-	// initialize optimized broadcaster
 	private final static Broadcaster broadcaster = new OptimizedBroadcaster();
 
 	private static final Logger _log = Logger.getLogger(WebSocketLoggerApplication.class);
