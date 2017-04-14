@@ -1,3 +1,19 @@
+buildscript {
+	dependencies {
+		classpath group: "com.liferay", name: "com.liferay.gradle.plugins", version: "2.0.10"
+	}
+
+	repositories {
+		mavenLocal()
+
+		maven {
+			url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+		}
+	}
+}
+
+apply plugin: "com.liferay.plugin"
+
 dependencies {
 	compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
 	compileOnly group: "com.liferay.portal", name: "com.liferay.util.taglib", version: "2.0.0"
@@ -10,4 +26,12 @@ dependencies {
 	compile group: "log4j", name: "log4j", version: "1.2.17"
 	compile 'javax.servlet:javax.servlet-api:3.1.0'
 	compile group: "org.glassfish.grizzly.osgi", name: "grizzly-httpservice-bundle", version: "2.3.18"
+}
+
+repositories {
+	mavenLocal()
+
+	maven {
+		url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+	}
 }
